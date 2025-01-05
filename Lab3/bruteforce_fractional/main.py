@@ -30,10 +30,3 @@ def bruteforce_fractional_knapsack(p,w,m):
                     fractional_profit = current_profit-p[i] + (fraction * p[i])
                     max_profit = max(max_profit, fractional_profit)
     return max_profit
-
-p = [60, 100, 120]  # Profits
-w = [10, 20, 30]    # Weights
-m = 50              # Maximum capacity
-
-max_profit = bruteforce_fractional_knapsack(p, w, m)
-print("Maximum Profit:", max_profit)
