@@ -3,18 +3,18 @@ def greedy_fractional_knapsack(p,w,n):
     items.sort(key=lambda x: x[2], reverse = True)
 
     max_profit = 0
-    reamaining_capacity = m
+    remaining_capacity = m
     
     for profit, weight, ratio, index in items:
-        if reamaining_capacity == 0:
+        if remaining_capacity == 0:
             break
 
-        if weight <= reamaining_capacity:
+        if weight <= remaining_capacity:
             max_profit += profit
-            reamaining_capacity == weight
+            remaining_capacity -= weight
         else:
-            max_profit += profit *(reamaining_capacity/weight)
-            reamaining_capacity = 0
+            max_profit += profit *(remaining_capacity/weight)
+            remaining_capacity = 0
     return max_profit
 
 p = [1,4,5,7] 
